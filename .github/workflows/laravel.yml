@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
 
 jobs:
   laravel-tests:
@@ -32,8 +32,9 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: php artisan test --parallel
+      
     - name: Execute Larastan
-      run: vendor/bin/phpstan analyze
+      run: vendor/bin/phpstan --analyze
     - name: Execute Laravel Pint
       run: vendor/bin/phpstan --test
     
