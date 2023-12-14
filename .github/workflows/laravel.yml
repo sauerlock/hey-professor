@@ -26,7 +26,7 @@ jobs:
       run: |
         mkdir -p database 
         touch database/database.sqlite
-        php artisan migrate --env=testing
+        
     
     - name: Package.json install
       run: npm install
