@@ -31,7 +31,9 @@ jobs:
         restore-keys: ${{ runner.os }}-composer-
 
     - name: Install dependencies
-      run: composer install --prefer-dist
+      run: |
+        cd C:inetpub\wwwroot\hey-professor
+        composer install --prefer-dist
     
     - name: Generate key
       run: php artisan key:generate
