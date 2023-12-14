@@ -32,7 +32,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        working-directory: /inetpub/wwwroot/hey-professor
+        working-directory:   /.github/workflows/hey-professor
         composer install  --no-progress --prefer-dist --optimize-autoloader
     
     - name: Generate key
