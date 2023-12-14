@@ -32,7 +32,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        working-directory:   /.github/workflows/hey-professor
+        cd /desired/path/in/runner  
         composer install  --no-progress --prefer-dist --optimize-autoloader
     
     - name: Generate key
