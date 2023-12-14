@@ -33,7 +33,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd C:inetpub\wwwroot\hey-professor
-        composer install --prefer-dist
+        composer install  --no-progress --prefer-dist --optimize-autoloader
     
     - name: Generate key
       run: php artisan key:generate
