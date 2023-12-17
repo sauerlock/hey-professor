@@ -25,7 +25,6 @@ jobs:
         mkdir -p database 
         touch database/database.sqlite
         
-    
     - name: Package.json install
       run: npm install
     - name: Build Assets
@@ -35,7 +34,7 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan test --parallel
+      run: vendor/bin/phpunit 
 
     - name: Execute Larastan
       run: vendor/bin/phpstan --analyze
