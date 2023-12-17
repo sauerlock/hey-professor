@@ -35,11 +35,7 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: | 
-          php artisan test --parallel    
-          if [ $? -ne 0 ]; then
-            echo "Opa! Deu ruim aqui com algum teste. Arrume antes de continuar... 😉"
-            exit 1
-          fi
+          vendor/bin/pest --parallel
 
 
     - name: Execute Larastan
