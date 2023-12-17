@@ -35,9 +35,7 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan migrate --env=testing --no-ansi
-           php artisan bootstrap:application --env=testing --no-ansi
-           php artisan test --parallel
+      run: php artisan test --parallel
 
     - name: Execute Larastan
       run: vendor/bin/phpstan --analyze
