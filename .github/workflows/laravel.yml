@@ -37,6 +37,6 @@ jobs:
       run: vendor/bin/pest
 
     - name: Execute Larastan
-      run: vendor/bin/phpstan --analyze
+      run: vendor/bin/phpstan --analyse
     - name: Execute Laravel Pint
       run: vendor/bin/phpstan --test
