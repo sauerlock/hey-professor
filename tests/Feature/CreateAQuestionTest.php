@@ -24,7 +24,18 @@ it('should create a question bigger than 255 characters', function () {
 });
 
 it('does the question mark in the end?', function () {
+    //Arrange
+    $user = User::factory()->create();
+    actingAs($user);
 
+    //Act
+    $request = Pest\Laravel\post(route(name: 'question.store'), [
+        'question' => str_repeat(string: '*', times: 10),
+    ]);
+
+    //Assert
+    $request->assertSessionHasErrors(['question' => 'Are you sure that is a question? It is missing the question mark in the end.']);
+    assertDatabaseCount('questions', count: 0);
 });
 
 it('has to be at least 10 characters', function () {
